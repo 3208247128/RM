@@ -9,7 +9,7 @@ def detect_red_and_green(image_path):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
     # 定义红色和绿色的HSV范围
-    lower_red = np.array([160, 100, 100])
+    lower_red = np.array([165, 100, 100])
     upper_red = np.array([179, 255, 255])
     lower_green = np.array([36, 100, 100])
     upper_green = np.array([86, 255, 255])

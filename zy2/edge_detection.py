@@ -2,16 +2,10 @@ import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-def edge_detection(image_path, threshold1=200, threshold2=290):
-    """
-    对输入的图像进行边缘检测，并显示结果。
-
-    参数:
-        image_path (str): 输入图像的文件路径。
-        threshold1 (int): Canny 边缘检测的低阈值。
-        threshold2 (int): Canny 边缘检测的高阈值。
-    """
+def edge_detection(image_path, threshold1=200, threshold2=250):
+  
     img = cv.imread(image_path, 0)
+    dst = cv.GaussianBlur(img, (17, 17), 0)
     edges = cv.Canny(img, threshold1, threshold2)
 
     # 找到所有非零像素点的坐标
@@ -31,4 +25,4 @@ def edge_detection(image_path, threshold1=200, threshold2=290):
     plt.show()
 
 # 测试封装的函数
-edge_detection('image_2.jpeg')
+edge_detection('zy2\image_2.jpeg')
