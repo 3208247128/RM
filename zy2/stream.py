@@ -10,7 +10,7 @@ cv2.imshow('Detected Colors', processed_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-edge_detection('zy2\image_2.jpeg')
+
 
 
 
