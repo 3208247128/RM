@@ -18,6 +18,8 @@ def detect_red_and_green(image_path):
     mask_red = cv2.inRange(hsv, lower_red, upper_red)
     mask_green = cv2.inRange(hsv, lower_green, upper_green)
 
+    cv2.imshow('mask',mask_green)
+
     # 寻找红色和绿色区域的轮廓
     contours_red, _ = cv2.findContours(mask_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours_green, _ = cv2.findContours(mask_green, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -42,3 +44,14 @@ def detect_red_and_green(image_path):
 
     # 返回带有标记的图像
     return image
+
+
+if __name__ == "__main__":
+    image_path = 'zy2\image11.jpeg'
+    combined_image = detect_red_and_green(image_path)
+
+    # 显示合成的图像
+    cv2.namedWindow('Combined Image', cv2.WINDOW_NORMAL)
+    cv2.imshow('Combined Image', combined_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

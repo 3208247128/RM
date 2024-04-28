@@ -6,7 +6,7 @@ def preprocess_image(image):
     denoised_image = cv2.fastNlMeansDenoisingColored(image, None, 10, 10, 7, 21)
     
     # 图像增强和对比度增强
-    alpha = 1.5  # 对比度增强参数
+    alpha = 1.0  # 对比度增强参数
     beta = 15  # 亮度增强参数
     enhanced_image = cv2.convertScaleAbs(denoised_image, alpha=alpha, beta=beta)
 
@@ -17,7 +17,7 @@ def preprocess_image(image):
 
 def find_quadrilaterals(processed_image):
     gray = cv2.cvtColor(processed_image, cv2.COLOR_BGR2GRAY)
-    ret, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+    ret, binary = cv2.threshold(gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
     # 查找轮廓
     contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
