@@ -18,7 +18,7 @@ def detect_red_and_green(image_path):
     mask_red = cv2.inRange(hsv, lower_red, upper_red)
     mask_green = cv2.inRange(hsv, lower_green, upper_green)
 
-    cv2.imshow('mask',mask_green)
+
 
     # 寻找红色和绿色区域的轮廓
     contours_red, _ = cv2.findContours(mask_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
