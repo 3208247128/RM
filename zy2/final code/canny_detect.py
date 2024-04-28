@@ -62,7 +62,7 @@ def mark_points_and_center(image, quadrilaterals):
 
 # 测试
 if __name__ == "__main__":
-    image_path = 'image_1.jpeg'
+    image_path = 'src\image_2.jpeg'
     image = cv2.imread(image_path)
     processed_image = preprocess_image(image)
     quadrilaterals = find_quadrilaterals(processed_image)
