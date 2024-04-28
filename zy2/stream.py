@@ -22,7 +22,7 @@ def detect_and_mark(image_path):
 
 # 主函数
 if __name__ == "__main__":
-    image_path = 'zy2\image_1.jpeg'
+    image_path = 'image_2.jpeg'
 
     combined_image = detect_and_mark(image_path)
 
