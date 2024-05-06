@@ -20,8 +20,8 @@ def detect_mark_and_save(image_path, output_path):
     cv2.imwrite(output_path, combined_image)
 
 if __name__ == "__main__":
-    image_path = r'src\image11.jpeg'
-    output_path = r'D:\githubjjz\J\J\zy2\out\combined_image3.jpg'
+    image_path = 'J\zy2\src\image_2.jpeg'
+    output_path = 'J\zy2\out\combined_image3.jpg'
     
     # 调用函数处理图像并保存
     detect_mark_and_save(image_path, output_path)
